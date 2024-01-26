@@ -17,6 +17,11 @@ pipeline {
                 sh 'mvn test'
             }
         }
+        stage('artifact') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
         stage('deploy') {
             steps {
                 deploy adapters: [
@@ -26,7 +31,8 @@ pipeline {
                         url: 'http://13.233.212.150:8080/'
                         )
                     ],
-                    contextPath: 'sam.html',
+                    contextPath: 'netflix',
+                    war: 'target/*.war'
             }
         }
     }
