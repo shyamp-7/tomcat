@@ -31,7 +31,7 @@ pipeline {
                         url: 'http://13.233.212.150:8080/'
                         )
                     ],
-                    contextPath: 'index.html',
+                    contextPath: 'sam.html',
                     war: 'target/*.war'
             }
         }
