@@ -4,7 +4,7 @@ pipeline {
     stages{
         stage('checkout') {
             steps {
-                git 'https://github.com/shyamp-7/tomcat.git'
+                git 'https://github.com/devopsbyraham/jenkins-java-project.git'
             }
         }
         stage('compile') {
