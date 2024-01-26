@@ -17,11 +17,6 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage('artifact') {
-            steps {
-                sh 'mvn clean package'
-            }
-        }
         stage('deploy') {
             steps {
                 deploy adapters: [
@@ -32,7 +27,6 @@ pipeline {
                         )
                     ],
                     contextPath: 'sam.html',
-                    war: 'target/*.war'
             }
         }
     }
