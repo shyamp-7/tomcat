@@ -31,6 +31,8 @@ pipeline {
                         url: 'http://13.233.212.150:8080/'
                         )
                     ],
+                contextPath: 'netflix',
+                    war: 'target/*.war'
             }
         }
     }
